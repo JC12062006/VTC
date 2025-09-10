@@ -1,0 +1,4 @@
+CREATE DATABASE vtc;
+
+USE vtc;
+
