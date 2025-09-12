@@ -23,12 +23,6 @@ switch($page) {
         include('view/vehicule/vehicule.php'); // à créer si besoin
         break;
 
-    case 'deconnexion':
-        session_destroy();
-        header('Location: index.php');
-        exit();
-        break;
-
     default:
         include('view/accueil.php'); // à créer si besoin
         break;
