@@ -1,6 +1,6 @@
 <?php
-require_once('model/chauffeurModel.php');
-require_once('model/vehiculeModel.php');
+require_once(__DIR__ . '/../../model/chauffeur.php');
+require_once(__DIR__ . '/../../model/vehiculeModel.php');
 
 $chauffeurs = getChauffeurs();
 $vehicules = getVehicules();
@@ -9,7 +9,7 @@ $vehicules = getVehicules();
 <div class="container mt-4">
     <h1 class="text-center">Ajouter une Réservation</h1>
 
-    <form action="controller/reservationController.php" method="POST" class="w-50 mx-auto mt-4 p-4 bg-light rounded shadow">
+    <form action="../../controller/reservationController.php" method="POST" class="w-50 mx-auto mt-4 p-4 bg-light rounded shadow">
         <div class="mb-3">
             <label for="id_chauffeur" class="form-label">Chauffeur</label>
             <select name="id_chauffeur" id="id_chauffeur" class="form-select" required>
@@ -36,7 +36,7 @@ $vehicules = getVehicules();
 
         <div class="mb-3">
             <label for="lieu" class="form-label">Lieu</label>
-            <input type="text" name="lieu" id="lieu" class="form-control" placeholder="Lieu de la réservation" required>
+            <input type="text" name="lieu" id="lieu" class="form-control" required>
         </div>
 
         <div class="mb-3">
