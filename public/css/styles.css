@@ -9,6 +9,6 @@ button:active {background-color: #363635;transform: translateY(4px);}
 nav{display: flex;
 justify-content: center;}
 
-header{
+body{
     background-color: #38b6ff;
 }
