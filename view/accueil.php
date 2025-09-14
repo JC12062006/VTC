@@ -1,7 +1,6 @@
+<h1 class="text-center mt-4">Bonjour</h1>
 
-<H1>Bonjour</H1>
-
-<nav>
-			<button onclick="window.location.href='view/vehicule/vehicule.php';" name="button"><strong>Liste des Véhicules</strong></button>
-				<button onclick="window.location.href='view/reservation/ajoutReserv.php';" name="button"><strong>Réservation</strong></button>
-		 </nav>
+<nav class="mt-4">
+    <button onclick="window.location.href='index.php?page=vehiculeList';"><strong>Liste des Véhicules</strong></button>
+    <button onclick="window.location.href='index.php?page=ajoutReserv';"><strong>Réservation</strong></button>
+</nav>
