@@ -20,11 +20,11 @@ switch($page) {
         break;
 
     case 'vehicule':
-        include('view/vehicule/vehicule.php'); // à créer si besoin
+        include('view/vehicule/vehicule.php');
         break;
 
     default:
-        include('view/accueil.php'); // à créer si besoin
+        include('view/accueil.php');
         break;
 }
 
