@@ -10,3 +10,4 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <center><a href="index.php"><img class="displayed" src="public/img/logo.png" alt="taxiloco"></a></center>
     </head>
+    <body>
