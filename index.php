@@ -20,14 +20,11 @@ switch($page) {
         include('view/reservation/listeReserv.php');
         break;
 
-<<<<<<< HEAD
     case 'vehicule':
         include('view/vehicule/vehicule.php');
-=======
     // Pages liées aux véhicules
     case 'vehiculeList':
         include('view/vehicule/vehiculeList.php');
->>>>>>> a7019fd12b5de401274b4ad2a41464428aa173e3
         break;
 
     case 'vehiculeDetail':
