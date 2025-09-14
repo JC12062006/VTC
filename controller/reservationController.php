@@ -1,20 +1,17 @@
 <?php
-require_once('model/reservationModel.php');
+require_once(__DIR__ . '/../model/reservationModel.php');
+require_once(__DIR__ . '/../model/chauffeurModel.php');
 
-// Si on veut afficher la liste des réservations
-if (isset($_GET['action']) && $_GET['action'] === 'liste') {
-    $reservations = getReservations();
-    include('view/reservation/listeReserv.php');
-}
+$id_vehicule = $_POST['id_vehicule'];
+$lieu = $_POST['lieu'];
+$date = $_POST['date_reservation'];
 
-// Si on veut ajouter une réservation (formulaire envoyé)
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $idChauffeur = $_POST['id_chauffeur'];
-    $idVehicule = $_POST['id_vehicule'];
-    $lieu = $_POST['lieu'];
-    $date = $_POST['date_reservation'];
+// Exemple : affecter automatiquement un chauffeur disponible
+$chauffeur = getChauffeurDisponible($date, $id_vehicule);
 
-    ajouterReservation($idChauffeur, $idVehicule, $lieu, $date);
-    header('Location: index.php?page=listeReserv');
-    exit();
+if ($chauffeur) {
+    ajouterReservation($chauffeur['Id_Chauffeur'], $id_vehicule, $lieu, $date);
+    header('Location: ../view/reservation/success.php');
+} else {
+    header('Location: ../view/reservation/echec.php');
 }
