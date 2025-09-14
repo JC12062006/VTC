@@ -8,7 +8,7 @@ $req->execute();
 $types = $req->fetchAll();
 
 
-/*var_dump($vehicule);x
+/*var_dump($vehicule);
 die();
 */
 
