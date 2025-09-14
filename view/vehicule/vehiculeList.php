@@ -1,29 +1,38 @@
+<?php
+require_once('model/vehicule.php');
+$vehicules = getVehicules();
+?>
+
 <div class="container mt-4">
     <h1 class="text-center">Liste des Véhicules</h1>
 
-    <div class="table-responsive w-50 mx-auto">
+    <div class="table-responsive w-75 mx-auto">
         <table class="table table-primary table-bordered text-center">
             <thead class="table-dark">
                 <tr>
-                    <th>Id_Vehicule</th>
+                    <th>ID</th>
                     <th>Marque</th>
-                    <th>Modele</th>
+                    <th>Modèle</th>
                     <th>Immatriculation</th>
-                    <th>Annee</th>
+                    <th>Année</th>
                     <th>Places</th>
+                    <th>Détail</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($vehicules as $vehicule){ ?>
+                <?php foreach ($vehicules as $vehicule) : ?>
                     <tr>
-                        <td><?php echo $vehicule['Id_Vehicule']; ?></td>
-                        <td><?php echo $vehicule['Marque']; ?></td>
-                        <td><?php echo $vehicule['Modele']; ?></td>
-                        <td><?php echo $vehicule['Immatriculation']; ?></td>
-                        <td><?php echo $vehicule['Annee']; ?></td>
-                        <td><?php echo $vehicule['Places']; ?></td>
+                        <td><?= $vehicule['Id_Vehicule'] ?></td>
+                        <td><?= $vehicule['Marque'] ?></td>
+                        <td><?= $vehicule['Modele'] ?></td>
+                        <td><?= $vehicule['Immatriculation'] ?></td>
+                        <td><?= $vehicule['Annee'] ?></td>
+                        <td><?= $vehicule['Places'] ?></td>
+                        <td>
+                            <a href="index.php?page=vehiculeDetail&id=<?= $vehicule['Id_Vehicule'] ?>" class="btn btn-dark btn-sm">Voir</a>
+                        </td>
                     </tr>
-                <?php } ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
