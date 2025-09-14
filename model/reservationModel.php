@@ -9,12 +9,11 @@ function getReservations() {
 }
 
 // Ajouter une réservation
-function ajouterReservation($idChauffeur, $idVehicule, $lieu, $date) {
-    global $pdo;
-    $sql = "INSERT INTO Reservation (Id_Chauffeur, Id_Vehicule, Lieu, Date_Reservation)
-            VALUES (?, ?, ?, ?)";
-    $stmt = $pdo->prepare($sql);
-    return $stmt->execute([$idChauffeur, $idVehicule, $lieu, $date]);
+function ajouterReservation($id_chauffeur, $id_vehicule, $lieu, $date) {
+    global $bdd;
+    $sql = "INSERT INTO Reservation (Id_Chauffeur, Id_Vehicule, Lieu, Date_Reservation) VALUES (?, ?, ?, ?)";
+    $stmt = $bdd->prepare($sql);
+    $stmt->execute([$id_chauffeur, $id_vehicule, $lieu, $date]);
 }
 
 // Récupérer une réservation par son ID
