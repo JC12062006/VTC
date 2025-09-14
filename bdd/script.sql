@@ -16,7 +16,7 @@ CREATE TABLE Vehicule (
     Modele VARCHAR(50) NOT NULL,
     Immatriculation VARCHAR(20) NOT NULL UNIQUE,
     Annee INT NOT NULL,
-    Places INT NOT NULL,
+    Places INT NOT NULL
 );
 
 -- Table Reservation

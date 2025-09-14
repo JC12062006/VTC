@@ -7,6 +7,7 @@ include('view/commun/header.php');
 $page = isset($_GET['page']) ? $_GET['page'] : 'accueil';
 
 switch($page) {
+    // Pages liées aux réservations
     case 'ajoutReserv':
         include('view/reservation/ajoutReserv.php');
         break;
@@ -19,10 +20,21 @@ switch($page) {
         include('view/reservation/listeReserv.php');
         break;
 
+<<<<<<< HEAD
     case 'vehicule':
         include('view/vehicule/vehicule.php');
+=======
+    // Pages liées aux véhicules
+    case 'vehiculeList':
+        include('view/vehicule/vehiculeList.php');
+>>>>>>> a7019fd12b5de401274b4ad2a41464428aa173e3
         break;
 
+    case 'vehiculeDetail':
+        include('view/vehicule/vehicule.php'); // ou detailVehicule.php si tu renommes
+        break;
+
+    // Page d’accueil
     default:
         include('view/accueil.php');
         break;
