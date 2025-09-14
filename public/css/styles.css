@@ -1,0 +1,7 @@
+button {display: inline-block;padding: 25px 45px;font-size: 35px;cursor: pointer;text-align: center;text-decoration: none;outline: none;color: #fff;background-color: #575756;border: none;border-radius: 7px;box-shadow: 0 0px #999;}
+button:hover {background-color: #363635;}
+button:active {background-color: #363635;transform: translateY(4px);}
+
+
+.button{list-style: none;
+}
