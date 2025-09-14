@@ -1,5 +1,5 @@
 <?php
-require_once('model/vehicule.php');
+require_once('model/vehiculeModel.php');
 $id = $_GET['id'] ?? null;
 $vehicule = $id ? getVehiculeById($id) : null;
 ?>

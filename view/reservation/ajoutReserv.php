@@ -1,6 +1,6 @@
 <?php
-require_once('model/chauffeur.php');
-require_once('model/vehicule.php');
+require_once('model/chauffeurModel.php');
+require_once('model/vehiculeModel.php');
 
 $chauffeurs = getChauffeurs();
 $vehicules = getVehicules();
