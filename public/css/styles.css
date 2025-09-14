@@ -5,3 +5,6 @@ button:active {background-color: #363635;transform: translateY(4px);}
 
 .button{list-style: none;
 }
+
+nav{display: flex;
+justify-content: center;}
