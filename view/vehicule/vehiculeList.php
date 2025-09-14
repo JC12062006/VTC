@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($Vehicules as $Vehicule){ ?>
+                <?php foreach($vehicules as $vehicule){ ?>
                     <tr>
                         <td><?php echo $vehicule['Marque']; ?></td>
                         <td><?php echo $vehicule['Modele']; ?></td>
