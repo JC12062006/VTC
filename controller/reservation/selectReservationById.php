@@ -6,7 +6,7 @@ $id = $_GET['id'];
 $req = $bdd->prepare("SELECT * FROM reservation WHERE id=".$id);
 $req->execute();
 
-$type = $req->fetchAll();
+$reservation = $req->fetchAll();
 
 
 /*var_dump($reservation);

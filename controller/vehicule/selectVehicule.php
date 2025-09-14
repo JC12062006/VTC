@@ -5,7 +5,7 @@ include("bdd/bdd.php");
 $req = $bdd->prepare("SELECT * FROM vehicule");
 $req->execute();
 
-$types = $req->fetchAll();
+$vehicules = $req->fetchAll();
 
 
 /*var_dump($vehicule);
