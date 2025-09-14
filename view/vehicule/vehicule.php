@@ -1,21 +1,23 @@
-<h1>Voici la liste des Véhicules</h1>
-
 <?php 
 echo "Chemin actuel : " . __DIR__ . "<br>";
 echo "Fichier actuel : " . __FILE__ . "<br>";
 ?>
 
-<!-- debut ajout de la liste des types -->
-<?php include('../../controller/vehicule/selectVehicule.php');  ?>
+<h1>Voici la liste des Véhicules</h1>
 
-<!-- Debug : vérifier si $vehicules contient des données -->
+<!-- debut ajout de la liste des types -->
 <?php 
-if (empty($vehicules)) {
-    echo "<p>Aucun véhicule trouvé dans la base de données.</p>";
+echo "Tentative d'inclusion de selectVehicule.php...<br>";
+include('../../controller/vehicule/selectVehicule.php'); 
+echo "Inclusion terminée<br>";
+
+// Vérifier si la variable existe
+if (isset($vehicules)) {
+    echo "Variable \$vehicules définie avec " . count($vehicules) . " éléments<br>";
 } else {
-    echo "<p>Nombre de véhicules trouvés : " . count($vehicules) . "</p>";
+    echo "Variable \$vehicules NON définie<br>";
 }
 ?>
 
-<?php  include('vehiculeList.php'); ?>
+<?php include('vehiculeList.php'); ?>
 <!-- fin ajout de la liste des types -->
