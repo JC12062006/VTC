@@ -20,6 +20,8 @@ switch($page) {
         include('view/reservation/listeReserv.php');
         break;
 
+    case 'vehicule':
+        include('view/vehicule/vehicule.php');
     // Pages liées aux véhicules
     case 'vehiculeList':
         include('view/vehicule/vehiculeList.php');
