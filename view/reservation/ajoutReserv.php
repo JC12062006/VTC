@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/../../model/chauffeur.php');
+require_once(__DIR__ . '/../../model/chauffeurModel.php');
 require_once(__DIR__ . '/../../model/vehiculeModel.php');
 
 $chauffeurs = getChauffeurs();
