@@ -2,6 +2,6 @@
 <H1>Bonjour</H1>
 
 <nav>
-			<button onclick="window.location.href='index.html';" name="button"><strong>Accueil</strong></button>
-				<button onclick="window.location.href='';" name="button"><strong>Contact</strong></button>
+			<button onclick="window.location.href='view/vehicule/vehicule.php';" name="button"><strong>Liste des Véhicules</strong></button>
+				<button onclick="window.location.href='view/reservation/reservation.php';" name="button"><strong>Réservation</strong></button>
 		 </nav>
