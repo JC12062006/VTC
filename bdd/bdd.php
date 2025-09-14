@@ -2,7 +2,7 @@
 
 	try{
 		$user = "root";
-		$pass = "";
+		$pass = "root";
 		$bdd = new PDO ('mysql:host=localhost;dbname=vtc',$user,$pass);
 
 	}catch (PDOException $e){
