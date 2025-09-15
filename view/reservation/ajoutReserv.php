@@ -52,7 +52,11 @@ $vehicules = getVehicules();
         <div class="text-center">
             <button type="submit" class="btn btn-dark px-5 py-2">Réserver</button>
 
+        </div>
+
+    </div>
+
             <!-- debut ajout de la liste des types -->
-            <?php include('controller/reservationController.php');  ?>
-            <?php  include('view/reservation/listeReserv.php'); ?>
+            <?php require_once(__DIR__ . '/../../controller/reservationController.php');  ?>
+            <?php require_once(__DIR__ . '/../../view/reservation/listeReserv.php'); ?>
             <!-- fin ajout de la liste des types -->
