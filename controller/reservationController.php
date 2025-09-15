@@ -16,12 +16,17 @@ if (
 
     if ($chauffeur) {
         ajouterReservation($chauffeur['Id_Chauffeur'], $id_vehicule, $lieu, $date);
-        header('Location: ../view/reservation/success.php');
+        // Retour à la page d'ajout
+        header('Location: ../index.php?page=ajoutReserv');
         exit;
     } else {
-        header('Location: ../view/reservation/echec.php');
+        // Retour à la page d'ajout
+        header('Location: ../index.php?page=ajoutReserv');
         exit;
     }
 } else {
-    echo "Formulaire incomplet.";
+    // Retour à la page d'ajout
+    header('Location: ../index.php?page=ajoutReserv');
+    exit;
 }
+?>

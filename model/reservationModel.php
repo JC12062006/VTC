@@ -3,9 +3,9 @@ require_once(__DIR__ . '/../bdd/bdd.php');
 
 // Récupérer toutes les réservations
 function getReservations() {
-    global $pdo;
+    global $bdd;
     $sql = "SELECT * FROM Reservation";
-    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    return $bdd->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
 // Ajouter une réservation
@@ -18,9 +18,9 @@ function ajouterReservation($id_chauffeur, $id_vehicule, $lieu, $date) {
 
 // Récupérer une réservation par son ID
 function getReservationById($id) {
-    global $pdo;
+    global $bdd;
     $sql = "SELECT * FROM Reservation WHERE Id_Reservation = ?";
-    $stmt = $pdo->prepare($sql);
+    $stmt = $bdd->prepare($sql);
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }

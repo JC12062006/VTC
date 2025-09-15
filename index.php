@@ -6,6 +6,12 @@ include('view/commun/header.php');
 // Définition de la page à afficher
 $page = isset($_GET['page']) ? $_GET['page'] : 'accueil';
 
+// Traitement du formulaire de réservation
+if ($page === 'addReservation' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once(__DIR__ . '/controller/reservationController.php');
+    exit; // Important : stopper l'exécution après le traitement
+}
+
 switch($page) {
     // Pages liées aux réservations
     case 'ajoutReserv':
