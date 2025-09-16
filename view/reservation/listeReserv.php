@@ -1,11 +1,8 @@
 <?php
-// Ne pas réinclure le model si déjà fait
-if (!function_exists('getReservations')) {
-    require_once(__DIR__ . '/../../model/reservationModel.php');
-}
+require_once(__DIR__ . '/../../model/reservationModel.php');
 
 try {
-    $reservations = getReservations();
+    $reservations = getReservations(); // Cette fonction doit inclure les JOIN dans reservationModel.php
 } catch (Exception $e) {
     echo "Erreur lors du chargement des réservations : " . $e->getMessage();
     $reservations = [];
@@ -16,11 +13,11 @@ try {
     <h1 class="text-center">Liste des Réservations</h1>
 
     <div class="table-responsive w-75 mx-auto">
-        <table class="table table-primary table-bordered text-center">
+        <table class="table table-bordered table-hover text-center">
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Lieu</th>   
+                    <th>Lieu</th>
                     <th>Date</th>
                     <th>Chauffeur</th>
                     <th>Véhicule</th>
@@ -29,23 +26,18 @@ try {
             </thead>
             <tbody>
                 <?php if (!empty($reservations)): ?>
-                    <?php foreach($reservations as $reservation): ?>
+                    <?php foreach ($reservations as $reservation): ?>
                         <tr>
                             <td><?= $reservation['Id_Reservation'] ?></td>
-                            <td><?= $reservation['Lieu'] ?></td>
+                            <td><?= htmlspecialchars($reservation['Lieu']) ?></td>
                             <td><?= date('d/m/Y', strtotime($reservation['Date_Reservation'])) ?></td>
                             <td>
-                                <?= $chauffeur['Nom'] ?? 'Non assigné' ?>
-                                <?= $chauffeur['Prenom'] ?? 'Non assigné' ?>
-                                <?php if (!empty($chauffeur['Num_Tel'])): ?>
-                                    <br><small class="text-muted"><?= $chauffeur['Num_Tel'] ?></small>
-                                <?php endif; ?>
+                                <?= htmlspecialchars($reservation['ChauffeurPrenom']) ?> <?= htmlspecialchars($reservation['ChauffeurNom']) ?>
+                                <br><small class="text-muted"><?= htmlspecialchars($reservation['ChauffeurTel']) ?></small>
                             </td>
                             <td>
-                                <?= $vehicule['Marque'] ?? 'Non assigné' ?>
-                                <?php if (!empty($vehicule['Immatriculation'])): ?>
-                                    <br><small class="text-muted"><?= $vehicule['Immatriculation'] ?></small>
-                                <?php endif; ?>
+                                <?= htmlspecialchars($reservation['VehiculeMarque']) ?> <?= htmlspecialchars($reservation['VehiculeModele']) ?>
+                                <br><small class="text-muted"><?= htmlspecialchars($reservation['VehiculeImmatriculation']) ?></small>
                             </td>
                             <td>
                                 <a href="index.php?page=detailReserv&id=<?= $reservation['Id_Reservation'] ?>" class="btn btn-sm btn-primary">Voir</a>

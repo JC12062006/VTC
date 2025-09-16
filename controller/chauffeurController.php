@@ -1,8 +1,8 @@
 <?php
-require_once('model/vehicule.php');
+require_once('model/chauffeurModel.php');
 
 // Récupérer tous les véhicules
-$vehicules = getVehicules();
+$chauffeurs = getChauffeurs();
 
 // Afficher la vue avec la liste
-include('view/vehicule/vehiculeList.php');
+include('view/chauffeur/chauffeurList.php');

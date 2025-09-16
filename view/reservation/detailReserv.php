@@ -34,64 +34,46 @@ $reservation = $id ? getReservationById($id) : null;
                                 <table class="table table-borderless">
                                     <tr>
                                         <th width="30%">Nom :</th>
-                                        <td><?= $chauffeur['Nom'] ?? 'Non assigné' ?></td>
-                                        <td><?= $chauffeur['Prenom'] ?? 'Non assigné' ?></td>
+                                        <td><?= $reservation['ChauffeurPrenom'] ?> <?= $reservation['ChauffeurNom'] ?></td>
                                     </tr>
-                                    <?php if (!empty($chauffeur['Num_Tel'])): ?>
                                     <tr>
                                         <th>Téléphone :</th>
-                                        <td><?= $chauffeur['Num_Tel'] ?></td>
+                                        <td><?= $reservation['ChauffeurTel'] ?></td>
                                     </tr>
-                                    <?php endif; ?>
-                                    <?php if (!empty($chauffeur['Email'])): ?>
-                                    <tr>
-                                        <th>Email :</th>
-                                        <td><?= $chauffeur['Email'] ?></td>
-                                    </tr>
-                                    <?php endif; ?>
                                 </table>
                             </div>
                         </div>
-                        
+
                         <hr>
-                        
+
                         <div class="row">
                             <div class="col-12">
                                 <h5 class="text-warning">Véhicule assigné</h5>
                                 <table class="table table-borderless">
                                     <tr>
                                         <th width="20%">Véhicule :</th>
-                                        <td><?= $vehicule['Marque'] ?? 'Non assigné' ?></td>
-                                        <td><?= $vehicule['Modèle'] ?? 'Non assigné' ?></td>
+                                        <td><?= $reservation['VehiculeMarque'] ?> <?= $reservation['VehiculeModele'] ?></td>
                                     </tr>
-                                    <?php if (!empty($vehicule['Immatriculation'])): ?>
                                     <tr>
                                         <th>Immatriculation :</th>
-                                        <td><?= $vehicule['Immatriculation'] ?></td>
+                                        <td><?= $reservation['VehiculeImmatriculation'] ?></td>
                                     </tr>
-                                    <?php endif; ?>
-                                    <?php if (!empty($vehicule['Places'])): ?>
                                     <tr>
                                         <th>Nombre de places :</th>
-                                        <td><?= $vehicule['Places'] ?> places</td>
+                                        <td><?= $reservation['VehiculePlaces'] ?> places</td>
                                     </tr>
-                                    <?php endif; ?>
-                                    <?php if (!empty($vehicule['Annee'])): ?>
                                     <tr>
                                         <th>Année :</th>
-                                        <td><?= $vehicule['Annee'] ?></td>
+                                        <td><?= $reservation['VehiculeAnnee'] ?></td>
                                     </tr>
-                                    <?php endif; ?>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="text-center">
-                            <a href="index.php?page=ajoutReserv" class="btn btn-secondary">
-                                <i class="fas fa-arrow-left"></i> Retour à la liste
-                            </a>
-                        </div>
+                    <div class="card-footer text-center">
+                        <a href="index.php?page=ajoutReserv" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Retour à la liste
+                        </a>
                     </div>
                 </div>
             </div>

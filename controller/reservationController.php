@@ -1,31 +1,27 @@
 <?php
 require_once(__DIR__ . '/../model/reservationModel.php');
-require_once(__DIR__ . '/../model/chauffeurModel.php');
 
 if (
-    isset($_POST['id_vehicule'], $_POST['lieu'], $_POST['date_reservation']) &&
+    isset($_POST['id_chauffeur'], $_POST['id_vehicule'], $_POST['lieu'], $_POST['date_reservation']) &&
+    !empty($_POST['id_chauffeur']) &&
     !empty($_POST['id_vehicule']) &&
     !empty($_POST['lieu']) &&
     !empty($_POST['date_reservation'])
 ) {
+    // ✅ Récupération des données du formulaire
+    $id_chauffeur = $_POST['id_chauffeur'];
     $id_vehicule = $_POST['id_vehicule'];
     $lieu = $_POST['lieu'];
     $date = $_POST['date_reservation'];
 
-    $chauffeur = getChauffeurDisponible($date, $id_vehicule);
+    // ✅ Ajout de la réservation avec le chauffeur choisi
+    ajouterReservation($id_chauffeur, $id_vehicule, $lieu, $date);
 
-    if ($chauffeur) {
-        ajouterReservation($chauffeur['Id_Chauffeur'], $id_vehicule, $lieu, $date);
-        // Retour à la page d'ajout
-        header('Location: ../index.php?page=ajoutReserv');
-        exit;
-    } else {
-        // Retour à la page d'ajout
-        header('Location: ../index.php?page=ajoutReserv');
-        exit;
-    }
+    // ✅ Redirection vers la page de réservation
+    header('Location: ../index.php?page=ajoutReserv');
+    exit;
 } else {
-    // Retour à la page d'ajout
+   
     header('Location: ../index.php?page=ajoutReserv');
     exit;
 }
