@@ -33,11 +33,22 @@ try {
                         <tr>
                             <td><?= $reservation['Id_Reservation'] ?></td>
                             <td><?= $reservation['Lieu'] ?></td>
-                            <td><?= $reservation['Date_Reservation'] ?></td>
-                            <td><?= $reservation['Id_Chauffeur'] ?></td>
-                            <td><?= $reservation['Id_Vehicule'] ?></td>
+                            <td><?= date('d/m/Y', strtotime($reservation['Date_Reservation'])) ?></td>
                             <td>
-                                <a href="index.php?page=detailReserv&id=<?= $reservation['Id_Reservation'] ?>">Voir</a>
+                                <?= $chauffeur['Nom'] ?? 'Non assigné' ?>
+                                <?= $chauffeur['Prenom'] ?? 'Non assigné' ?>
+                                <?php if (!empty($chauffeur['Num_Tel'])): ?>
+                                    <br><small class="text-muted"><?= $chauffeur['Num_Tel'] ?></small>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?= $vehicule['Marque'] ?? 'Non assigné' ?>
+                                <?php if (!empty($vehicule['Immatriculation'])): ?>
+                                    <br><small class="text-muted"><?= $vehicule['Immatriculation'] ?></small>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <a href="index.php?page=detailReserv&id=<?= $reservation['Id_Reservation'] ?>" class="btn btn-sm btn-primary">Voir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
