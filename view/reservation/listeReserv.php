@@ -20,7 +20,7 @@ try {
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Lieu</th>
+                    <th>Lieu</th>   
                     <th>Date</th>
                     <th>Chauffeur</th>
                     <th>Véhicule</th>
